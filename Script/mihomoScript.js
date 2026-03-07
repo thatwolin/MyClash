@@ -443,6 +443,24 @@ const serviceConfigs = [
 function main(config) {
   if (!enable) return config;
 
+  // 定义全局排除节点的正则表达式
+  const excludeFilter =
+    /群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|禁止|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|⚠️|@|Expire|http|com/iu;
+
+  // 排除匹配到的节点
+  if (config.proxies && Array.isArray(config.proxies)) {
+    config.proxies = config.proxies.filter(
+      (proxy) => !excludeFilter.test(proxy.name),
+    );
+  }
+
+  // 为生成后的配置加上过滤字段（如果 proxy-providers 存在）
+  if (config['proxy-providers']) {
+    Object.keys(config['proxy-providers']).forEach((key) => {
+      config['proxy-providers'][key]['exclude-filter'] = excludeFilter.source;
+    });
+  }
+
   const proxies = config?.proxies || [];
   const proxyCount = proxies.length;
   const proxyProviderCount =
