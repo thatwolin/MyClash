@@ -361,7 +361,7 @@ const serviceConfigs = [
   {
     key: 'googlefcm',
     name: 'FCM服务',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png',
+    icon: 'https://raw.githubusercontent.com/MiToverG422/Qure/master/IconSet/Color/fcm.png',
     rules: ['RULE-SET,googlefcm,FCM服务'],
   },
   {
