@@ -1,6 +1,6 @@
 # MyClash
 
-mihomo（clashMeta）配置覆写脚本
+Mihomo（Clash Meta）配置全局覆写脚本
 
 注意⚠️：该脚本仅适用于覆写机场提供的配置文件，请勿用于覆写自己编写的配置文件
 
