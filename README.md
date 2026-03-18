@@ -36,9 +36,10 @@ https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Script/mihomo
 
 - 脚本内策略组、节点组均支持自定义是否启用（默认启用）
 
-## 内置策略组（均为手动选择）
+## 内置策略组
 
-> _若不需要某个策略组，可在脚本中将对应开关设为 `false`_
+> - _所有组均为手动选择（select）_
+> - _若不需要某个策略组，可在脚本中将对应开关设为 `false`_
 
 - `默认节点`
 - `国外AI`
@@ -57,8 +58,9 @@ https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Script/mihomo
 - `下载专用`
 - `直连` （可自定义IP优先级，建议使用 `IPv4优先`，防止出现一些问题）
 
-## 内置节点组（均为自动选择）
+## 内置节点组
 
+> - _所有组均为自动选择（url-test）_
 > - _若不需要某个节点组，可在脚本中将对应开关设为 `false`_
 > - _若机场订阅中不存在对应节点组的节点，则该节点组不会显示_
 > - _未匹配节点组或未启用节点组的节点，将统一归类至 「其他节点」_
