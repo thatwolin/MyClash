@@ -552,18 +552,32 @@ function main(config) {
   regionDefinitions.forEach((r) => {
     const groupData = regionGroups[r.name];
     if (groupData.proxies.length > 0) {
+      // 构建 url-test 节点组
+      const autoTestName = `${r.name}-自动选择`;
       generatedRegionGroups.push({
         ...groupBaseOption,
-        name: r.name,
+        name: autoTestName,
         type: 'url-test',
         tolerance: 100,
         icon: r.icon,
         proxies: groupData.proxies,
+        hidden: true,
+      });
+
+      // 构建 select 节点组
+      generatedRegionGroups.push({
+        ...groupBaseOption,
+        name: r.name,
+        type: 'select',
+        icon: r.icon,
+        proxies: [autoTestName, ...groupData.proxies],
       });
     }
   });
 
-  const regionGroupNames = generatedRegionGroups.map((g) => g.name);
+  const regionGroupNames = generatedRegionGroups
+    .filter((g) => g.type === 'select')
+    .map((g) => g.name);
 
   if (otherProxies.length > 0) {
     generatedRegionGroups.push({
