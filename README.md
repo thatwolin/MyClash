@@ -38,7 +38,6 @@ https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Script/mihomo
 
 ## 内置策略组
 
-> - _所有组均为手动选择（select）_
 > - _若不需要某个策略组，可在脚本中将对应开关设为 `false`_
 
 - `默认节点`
