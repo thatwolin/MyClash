@@ -452,7 +452,7 @@ function main(config) {
   serviceConfigs.forEach((svc) => {
     let groupProxies;
     if (svc.reject) {
-      groupProxies = ['REJECT', 'REJECT-DROP', 'PASS', '直连'];
+      groupProxies = ['REJECT', 'REJECT-DROP', 'PASS', '直连', '默认节点'];
     } else {
       groupProxies = ['默认节点', ...regionGroupNames];
     }

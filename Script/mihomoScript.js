@@ -616,7 +616,7 @@ function main(config) {
 
       let groupProxies;
       if (svc.reject) {
-        groupProxies = ['REJECT', 'REJECT-DROP', 'PASS', '直连'];
+        groupProxies = ['REJECT', 'REJECT-DROP', 'PASS', '直连', '默认节点'];
       } else if (svc.key === 'googlefcm') {
         groupProxies = [
           '直连',
