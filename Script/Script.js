@@ -182,9 +182,9 @@ const ruleProviders = {
   },
   telegram_ip: {
     ...ruleProviderCommonIpcidr,
-    ...ruleProviderFormatText,
-    url: 'https://core.telegram.org/resources/cidr.txt',
-    path: './ruleset/telegram_ip.txt',
+    ...ruleProviderFormatMrs,
+    url: 'https://fastly.jsdelivr.net/gh/echs-top/proxy@main/rules/mrs/telegram_ip.mrs',
+    path: './ruleset/telegram_ip.mrs',
   },
   pixiv: {
     ...ruleProviderCommonDomain,
