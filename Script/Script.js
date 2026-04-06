@@ -9,73 +9,73 @@ const regionDefinitions = [
   {
     name: '香港',
     regex: /(?=.*(港|🇭🇰|HK|[Hh]ong\s*[Kk]ong))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png',
   },
   {
     name: '日本',
     regex: /^(?!.*免费)(?=.*(日本|🇯🇵|JP|[Jj]apan))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png',
   },
   {
     name: '美国',
     regex: /(?=.*(美|🇺🇸|US|[Aa]merica|[Uu]nited\s*[Ss]tates))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png',
   },
   {
     name: '新加坡',
     regex: /(?=.*(新加坡|狮城|🇸🇬|SG|[Ss]ingapore))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png',
   },
   {
     name: '台湾省',
     regex: /(?=.*(台湾|🇹🇼|TW|[Tt]ai\s*[Ww]an))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png',
   },
   {
     name: '韩国',
     regex: /(?=.*(韩|🇰🇷|KR|[Kk]orea))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png',
   },
   {
     name: '英国',
     regex: /(?=.*(英|🇬🇧|UK|[Uu]nited\s*[Kk]ingdom|[Bb]ritain))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Kingdom.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_Kingdom.png',
   },
   {
     name: '德国',
     regex: /(?=.*(德国|🇩🇪|DE|[Gg]ermany))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Germany.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Germany.png',
   },
   {
     name: '法国',
     regex: /(?=.*(法国|🇫🇷|FR|[Ff]rance))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/France.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/France.png',
   },
   {
     name: '加拿大',
     regex: /(?=.*(加拿大|🇨🇦|CA|[Cc]anada))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Canada.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Canada.png',
   },
   {
     name: '澳大利亚',
     regex: /(?=.*(澳大利亚|🇦🇺|AU|[Aa]ustralia))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Australia.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Australia.png',
   },
   {
     name: '俄罗斯',
     regex: /(?=.*(俄罗斯|🇷🇺|RU|[Rr]ussia))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Russia.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Russia.png',
   },
   {
     name: '低倍率节点',
     regex: /^(?!.*(?:剩|期|客户端|软件)).*(?:(?<!\d)0\.[0-5]|下载|低倍)/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available_1.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Available_1.png',
   },
   {
     name: '高倍率节点',
     regex:
       /(?:[*xX✕✖⨉]\s*(?:[2-9]\d*|[1-9]\d+)(?:\.\d+)?)|(?:(?<![\d.])(?:[2-9]\d*|[1-9]\d+)(?:\.\d+)?\s*(?:倍|[*xX✕✖⨉]))/u,
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Airport.png',
   },
 ];
 
@@ -105,79 +105,79 @@ const ruleProviders = {
   adblockmihomolite: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomolite.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomolite.mrs',
     path: './ruleset/adblockmihomolite.mrs',
   },
   DownloadApps: {
     ...ruleProviderCommonClassical,
     ...ruleProviderFormatText,
-    url: 'https://raw.githubusercontent.com/AIsouler/MyClash/main/Rules/DownloadApps.txt',
+    url: 'https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Rules/DownloadApps.txt',
     path: './ruleset/DownloadApps.txt',
   },
   fakeip_filter: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/fakeip-filter.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/fakeip-filter.mrs',
     path: './ruleset/fakeip-filter.mrs',
   },
   epicgames: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/epicgames.mrs',
     path: './ruleset/epicgames.mrs',
   },
   nvidia_cn: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nvidia@cn.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/nvidia@cn.mrs',
     path: './ruleset/nvidia@cn.mrs',
   },
   ai: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/ai.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/ai.mrs',
     path: './ruleset/ai.mrs',
   },
   youtube: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs',
     path: './ruleset/youtube.mrs',
   },
   google: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs',
     path: './ruleset/google.mrs',
   },
   google_ip: {
     ...ruleProviderCommonIpcidr,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs',
     path: './ruleset/google_ip.mrs',
   },
   github: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs',
     path: './ruleset/github.mrs',
   },
   microsoft: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs',
     path: './ruleset/microsoft.mrs',
   },
   microsoft_cn: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft@cn.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs',
     path: './ruleset/microsoft@cn.mrs',
   },
   telegram: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs',
     path: './ruleset/telegram.mrs',
   },
   telegram_ip: {
@@ -189,49 +189,49 @@ const ruleProviders = {
   pixiv: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pixiv.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.mrs',
     path: './ruleset/pixiv.mrs',
   },
   steam: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs',
     path: './ruleset/steam.mrs',
   },
   steam_cn: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam@cn.mrs',
     path: './ruleset/steam@cn.mrs',
   },
   twitter: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.mrs',
     path: './ruleset/twitter.mrs',
   },
   twitter_ip: {
     ...ruleProviderCommonIpcidr,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs',
     path: './ruleset/twitter_ip.mrs',
   },
   private: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs',
     path: './ruleset/private.mrs',
   },
   private_ip: {
     ...ruleProviderCommonIpcidr,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs',
     path: './ruleset/private_ip.mrs',
   },
   gfw: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/DustinWin/ruleset_geodata//mihomo-ruleset/gfw.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/gfw.mrs',
     path: './ruleset/gfw.mrs',
   },
   cn: {
@@ -243,7 +243,7 @@ const ruleProviders = {
   cn_ip: {
     ...ruleProviderCommonIpcidr,
     ...ruleProviderFormatMrs,
-    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs',
     path: './ruleset/cn_ip.mrs',
   },
 };
@@ -264,32 +264,32 @@ const serviceConfigs = [
   {
     key: 'ai',
     name: '国外AI',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ChatGPT.png',
   },
   {
     key: 'youtube',
     name: 'YouTube',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png',
   },
   {
     key: 'google',
     name: 'Google',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png',
   },
   {
     key: 'github',
     name: 'GitHub',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/GitHub.png',
   },
   {
     key: 'microsoft',
     name: 'Microsoft',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png',
   },
   {
     key: 'telegram',
     name: 'Telegram',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png',
   },
   {
     key: 'pixiv',
@@ -299,17 +299,17 @@ const serviceConfigs = [
   {
     key: 'steam',
     name: 'Steam',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Steam.png',
   },
   {
     key: 'twitter',
     name: 'Twitter',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Twitter.png',
   },
   {
     key: 'adblock',
     name: '广告拦截',
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png',
     reject: true,
   },
 ];
@@ -406,7 +406,7 @@ function main(config) {
         name: autoTestName,
         type: 'url-test',
         tolerance: 100,
-        icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png',
+        icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png',
         proxies: groupData.proxies,
         hidden: true,
       });
@@ -432,7 +432,7 @@ function main(config) {
       name: '其他节点',
       type: 'select',
       proxies: otherProxies,
-      icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png',
+      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/World_Map.png',
     });
   }
 
@@ -446,7 +446,7 @@ function main(config) {
     proxies: [...regionGroupNames, '其他节点'].filter(
       (n) => n !== '其他节点' || otherProxies.length > 0,
     ),
-    icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png',
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png',
   });
 
   serviceConfigs.forEach((svc) => {
@@ -473,7 +473,7 @@ function main(config) {
       name: '下载专用',
       type: 'select',
       proxies: ['直连', '默认节点'],
-      icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Download.png',
+      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Download.png',
     },
     {
       ...groupBaseOption,
@@ -485,7 +485,7 @@ function main(config) {
         '🇨🇳 直连（双栈）',
       ],
       url: 'https://connectivitycheck.platform.hicloud.com/generate_204',
-      icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png',
+      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/China_Map.png',
     },
   );
 

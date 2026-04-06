@@ -13,9 +13,9 @@ Mihomo（Clash Meta）配置全局覆写脚本，内置多项分流策略、地�
 https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Script/mihomoScript.js
 ```
 
-|                                                                                              |
-| -------------------------------------------------------------------------------------------- |
-| ![img](https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Image/import.webp) |
+|                                                                                |
+| ------------------------------------------------------------------------------ |
+| ![img](https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Image/import.webp) |
 
 ## 脚本说明
 
@@ -86,10 +86,10 @@ https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Script/mihomo
 
 - 客户端： [Bettbox](https://github.com/appshubcc/Bettbox)
 
-|                                                                                             |                                                                                             |                                                                                             |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| ![img](https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Image/IMG_1.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Image/IMG_2.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Image/IMG_3.webp) |
-| ![img](https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Image/IMG_4.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Image/IMG_5.webp) | ![img](https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Image/IMG_6.webp) |
+|                                                                               |                                                                               |                                                                               |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| ![img](https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Image/IMG_1.webp) | ![img](https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Image/IMG_2.webp) | ![img](https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Image/IMG_3.webp) |
+| ![img](https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Image/IMG_4.webp) | ![img](https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Image/IMG_5.webp) | ![img](https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Image/IMG_6.webp) |
 
 ## 致谢
 
