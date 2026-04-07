@@ -402,9 +402,7 @@ function main(config) {
     ...groupBaseOption,
     name: '默认节点',
     type: 'select',
-    proxies: [...regionGroupNames, '其他节点'].filter(
-      (n) => n !== '其他节点' || otherProxies.length > 0,
-    ),
+    proxies: [...regionGroupNames],
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png',
   });
 
