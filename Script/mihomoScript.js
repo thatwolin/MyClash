@@ -614,12 +614,14 @@ function main(config) {
       let groupProxies;
       if (svc.reject) {
         groupProxies = ['REJECT', 'REJECT-DROP', 'PASS', '直连', '默认节点'];
-      } else if (svc.key === 'microsoft' || svc.key === 'apple') {
-        groupProxies = ['默认节点', '直连', 'PASS', ...regionGroupNames];
+      } else if (
+        svc.key === 'microsoft' ||
+        svc.key === 'apple' ||
+        svc.key === 'spotify'
+      ) {
+        groupProxies = ['默认节点', '直连', ...regionGroupNames];
       } else if (svc.key === 'googlefcm') {
         groupProxies = ['直连', '默认节点', ...regionGroupNames];
-      } else if (svc.key === 'spotify') {
-        groupProxies = ['默认节点', '直连', ...regionGroupNames];
       } else {
         groupProxies = ['默认节点', ...regionGroupNames];
       }
@@ -719,26 +721,26 @@ function main(config) {
     'enhanced-mode': 'fake-ip',
     'fake-ip-range': '198.18.0.1/16',
     'fake-ip-range6': 'fc00::/18',
-    'fake-ip-filter': ['rule-set:fakeip_filter'],
-    nameserver: ['https://dns.alidns.com/dns-query'],
-    'direct-nameserver': ['system'],
-    'proxy-server-nameserver': ['https://doh.pub/dns-query'],
+    'fake-ip-filter': [
+      '*',
+      'rule-set:cn',
+      'rule-set:private',
+      'rule-set:fakeip_filter',
+    ],
+    'default-nameserver': ['114.114.114.114'], // 国内主流的、免费的公共DNS
+    nameserver: ['1.1.1.1'], // Cloudflare提供的公共DNS
+    'proxy-server-nameserver': ['https://doh.pub/dns-query#DIRECT'],
     'nameserver-policy': {
       '*': 'system',
       '+.arpa': 'system',
-      'rule-set:gfw': 'https://dns.google/dns-query#默认节点',
-      'rule-set:microsoft,apple': [
-        'https://dns.alidns.com/dns-query',
-        'https://doh.pub/dns-query',
-      ],
+      'rule-set:private': 'system',
+      'rule-set:cn': '119.29.29.29', // 腾讯提供的公共DNS
+      '+.internal.crop.com': '10.0.0.1',
     },
   };
 
   // hosts 配置
   config['hosts'] = {
-    'dns.alidns.com': ['223.5.5.5', '223.6.6.6'],
-    'doh.pub': ['1.12.12.21', '120.53.53.53'],
-    'dns.google': ['8.8.8.8', '8.8.4.4'],
     'services.googleapis.cn': ['services.googleapis.com'],
   };
 
@@ -773,6 +775,7 @@ function main(config) {
     enable: true,
     stack: 'system',
     'auto-route': true,
+    'strict-route': true,
     'auto-redirect': true,
     'auto-detect-interface': true,
     'dns-hijack': ['udp://any:53', 'tcp://any:53'],

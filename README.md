@@ -1,6 +1,6 @@
 # MyClash
 
-Mihomo（Clash Meta）配置全局覆写脚本，内置多项分流策略、地区策略，实现全局排除节点、自动识别节点倍率等功能
+Mihomo（Clash Meta）配置全局覆写脚本，无DNS泄露，内置多项分流策略、地区策略，实现全局排除节点、自动识别节点倍率等功能
 
 该仓库同样提供了yaml配置文件，相比脚本精简了一些地区策略组，没有倍率识别等，由于yaml的局限性导致实现的效果没有脚本的好，有需要的可查看：[mihomoConfig.yaml](https://github.com/AIsouler/MyClash/blob/main/Config/mihomoConfig.yaml)
 
@@ -24,6 +24,8 @@ https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Script/mihomo
 - 仅适用于使用 [mihomo 内核](https://github.com/MetaCubeX/mihomo) 的代理客户端
 
 - 仅适用于覆写机场提供的配置文件，请勿用于覆写自己编写的配置文件
+
+- 脚本内置的DNS配置已解决DNS泄露问题，建议不要开启代理软件的DNS覆写
 
 - 规则采用 `rule-set` 模式，按需添加规则集，告别臃肿的 geodata
 
