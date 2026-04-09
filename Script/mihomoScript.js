@@ -76,6 +76,7 @@ const rules = [
   'RULE-SET,epicgames,直连',
   'RULE-SET,nvidia_cn,直连',
   'RULE-SET,microsoft_cn,直连',
+  'RULE-SET,cloudflare_cn,直连',
   'DOMAIN-SUFFIX,fsend.cn,直连',
 ];
 
@@ -333,6 +334,12 @@ const ruleProviders = {
     ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.mrs',
     path: './ruleset/cloudflare.mrs',
+  },
+  cloudflare_cn: {
+    ...ruleProviderCommonDomain,
+    ...ruleProviderFormatMrs,
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare@cn.mrs',
+    path: './ruleset/cloudflare_cn.mrs',
   },
   cloudflare_ip: {
     ...ruleProviderCommonIpcidr,
@@ -742,21 +749,27 @@ function main(config) {
     'fake-ip-range6': 'fc00::/18',
     'fake-ip-filter': [
       '*',
-      'rule-set:cn',
       'rule-set:private',
       'rule-set:category_ntp',
       'rule-set:fakeip_filter',
       'rule-set:connectivity_check',
+      'rule-set:cn',
+      'RULE-SET,steam_cn',
+      'RULE-SET,epicgames',
+      'RULE-SET,nvidia_cn',
+      'RULE-SET,microsoft_cn',
+      'RULE-SET,cloudflare_cn',
+      'DOMAIN-SUFFIX,fsend.cn',
     ],
-    'default-nameserver': ['114.114.114.114'], // 国内主流的、免费的公共DNS
-    nameserver: ['1.1.1.1'], // Cloudflare提供的公共DNS
+    'default-nameserver': ['114.114.114.114'],
+    nameserver: ['1.1.1.1', '8.8.8.8'],
     'proxy-server-nameserver': ['https://doh.pub/dns-query#DIRECT'],
     'nameserver-policy': {
       '*': 'system',
       '+.arpa': 'system',
       '+.internal.crop.com': '10.0.0.1',
       'connectivitycheck.platform.hicloud.com,g.cn,fsend.cn': 'system',
-      'rule-set:private,cn,steam_cn,epicgames,nvidia_cn,microsoft_cn,microsoft,googlefcm,apple,spotify':
+      'rule-set:private,cn,steam_cn,epicgames,nvidia_cn,cloudflare_cn,microsoft_cn,microsoft,googlefcm,apple,spotify':
         'system',
     },
   };

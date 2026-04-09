@@ -515,14 +515,19 @@ function main(config) {
     'fake-ip-range6': 'fc00::/18',
     'fake-ip-filter': [
       '*',
-      'rule-set:cn',
       'rule-set:private',
       'rule-set:category_ntp',
       'rule-set:fakeip_filter',
       'rule-set:connectivity_check',
+      'rule-set:cn',
+      'RULE-SET,steam_cn',
+      'RULE-SET,epicgames',
+      'RULE-SET,nvidia_cn',
+      'RULE-SET,microsoft_cn',
+      'DOMAIN-SUFFIX,fsend.cn',
     ],
-    'default-nameserver': ['114.114.114.114'], // 国内主流的、免费的公共DNS
-    nameserver: ['1.1.1.1'], // Cloudflare提供的公共DNS
+    'default-nameserver': ['114.114.114.114'],
+    nameserver: ['1.1.1.1', '8.8.8.8'],
     'proxy-server-nameserver': ['https://doh.pub/dns-query#DIRECT'],
     'nameserver-policy': {
       '*': 'system',
