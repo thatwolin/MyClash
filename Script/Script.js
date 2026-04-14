@@ -76,9 +76,9 @@ const ruleProviders = {
   },
   fakeip_filter: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/fakeip-filter.mrs',
-    path: './ruleset/fakeip-filter.mrs',
+    ...ruleProviderFormatText,
+    url: 'https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@dev/public/fake_ip_filter.list',
+    path: './ruleset/fakeip-filter.list',
   },
   epicgames: {
     ...ruleProviderCommonDomain,
@@ -95,7 +95,7 @@ const ruleProviders = {
   ai: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/ai.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.mrs',
     path: './ruleset/ai.mrs',
   },
   youtube: {
@@ -191,7 +191,7 @@ const ruleProviders = {
   gfw: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-ruleset/gfw.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs',
     path: './ruleset/gfw.mrs',
   },
   cn: {
@@ -519,7 +519,7 @@ function main(config) {
     'fake-ip-range': '198.18.0.1/16',
     'fake-ip-range-v6': 'fc00::/18',
     'fake-ip-filter': [
-      '*',
+      '+.cn',
       'rule-set:private',
       'rule-set:category_ntp',
       'rule-set:fakeip_filter',
@@ -536,7 +536,6 @@ function main(config) {
     'nameserver-policy': {
       '*': 'system',
       '+.arpa': 'system',
-      '+.internal.crop.com': '10.0.0.1',
       'connectivitycheck.platform.hicloud.com': [...chinaDNS],
       '+.cn': [...chinaDNS],
       'rule-set:private,cn,steam_cn,epicgames,nvidia_cn,microsoft_cn,microsoft,apple':
