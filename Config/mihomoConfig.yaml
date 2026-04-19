@@ -101,7 +101,7 @@ dns:
     '*': 'system'
     '+.arpa': 'system'
     '+.cn': *chinaDNS
-    'rule-set:private,cn,steam_cn,epicgames,nvidia_cn,cloudflare_cn,microsoft_cn,microsoft,googlefcm,apple,spotify': *chinaDNS
+    'rule-set:private,cn,steam_cn,epicgames,nvidia_cn,cloudflare_cn,microsoft_cn,microsoft,googlefcm,apple,spotify,captcha': *chinaDNS
   direct-nameserver: ['system', '223.5.5.5', '119.29.29.29']
   direct-nameserver-follow-policy: true
 

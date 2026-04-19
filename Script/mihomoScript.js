@@ -813,7 +813,7 @@ function main(config) {
       '*': 'system',
       '+.arpa': 'system',
       '+.cn': [...chinaDNS],
-      [`rule-set:${[...direct_rules, 'microsoft', 'apple', 'spotify'].join(',')}`]:
+      [`rule-set:${[...direct_rules, 'microsoft', 'apple', 'spotify', 'captcha'].join(',')}`]:
         [...chinaDNS],
     },
     'direct-nameserver': ['system', '223.5.5.5', '119.29.29.29'],
