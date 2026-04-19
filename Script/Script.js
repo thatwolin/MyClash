@@ -239,7 +239,7 @@ const groupBaseOption = {
   interval: 600,
   timeout: 3000,
   url: 'https://g.cn/generate_204',
-  lazy: false,
+  lazy: true,
   'max-failed-times': 3,
   hidden: false,
 };

@@ -9,7 +9,7 @@ proxy_providers_common:
         enable: true,
         url: https://g.cn/generate_204,
         interval: 600,
-        lazy: false,
+        lazy: true,
       },
   }
 
@@ -315,7 +315,7 @@ group_common_select:
     interval: 600,
     timeout: 3000,
     url: 'https://g.cn/generate_204',
-    lazy: false,
+    lazy: true,
     max-failed-times: 3,
   }
 
@@ -327,7 +327,7 @@ group_common_auto:
     tolerance: 100,
     include-all: true,
     url: 'https://g.cn/generate_204',
-    lazy: false,
+    lazy: true,
     max-failed-times: 3,
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png',
     hidden: true,
