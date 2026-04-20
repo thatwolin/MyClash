@@ -157,154 +157,192 @@ rule-providers:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomolite.mrs'
+    path: './ruleset/adblockmihomolite.mrs'
   DownloadApps:
     <<: *rp_classical
     format: text
     url: 'https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Rules/DownloadApps.txt'
+    path: './ruleset/DownloadApps.txt'
   fakeip_filter:
     <<: *rp_domain
     format: text
     url: 'https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@dev/public/fake_ip_filter.list'
+    path: './ruleset/fakeip_filter.list'
   epicgames:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/epicgames.mrs'
+    path: './ruleset/epicgames.mrs'
   nvidia_cn:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/nvidia@cn.mrs'
+    path: './ruleset/nvidia@cn.mrs'
   ai:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.mrs'
+    path: './ruleset/ai.mrs'
   youtube:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs'
+    path: './ruleset/youtube.mrs'
   googlefcm:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/googlefcm.mrs'
+    path: './ruleset/googlefcm.mrs'
   google:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs'
+    path: './ruleset/google.mrs'
   google_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs'
+    path: './ruleset/google_ip.mrs'
   github:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs'
+    path: './ruleset/github.mrs'
   microsoft:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs'
+    path: './ruleset/microsoft.mrs'
   microsoft_cn:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs'
+    path: './ruleset/microsoft@cn.mrs'
   telegram:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs'
+    path: './ruleset/telegram.mrs'
   telegram_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/echs-top/proxy@main/rules/mrs/telegram_ip.mrs'
+    path: './ruleset/telegram_ip.mrs'
   pixiv:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/pixiv.mrs'
+    path: './ruleset/pixiv.mrs'
   steam:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs'
+    path: './ruleset/steam.mrs'
   steam_cn:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam@cn.mrs'
+    path: './ruleset/steam@cn.mrs'
   twitter:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.mrs'
+    path: './ruleset/twitter.mrs'
   twitter_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs'
+    path: './ruleset/twitter_ip.mrs'
   private:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs'
+    path: './ruleset/private.mrs'
   private_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs'
+    path: './ruleset/private_ip.mrs'
   gfw:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs'
+    path: './ruleset/gfw.mrs'
   cn:
     <<: *rp_domain
     format: mrs
     url: 'https://static-file-global.353355.xyz/rules/cn-additional-list.mrs'
+    path: './ruleset/cn.mrs'
   cn_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs'
+    path: './ruleset/cn_ip.mrs'
   emby:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/666OS/rules@release/mihomo/domain/Emby.mrs'
+    path: './ruleset/emby.mrs'
   emby_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/666OS/rules@release/mihomo/ip/Emby.mrs'
+    path: './ruleset/emby_ip.mrs'
   spotify:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs'
+    path: './ruleset/spotify.mrs'
   tiktok:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs'
+    path: './ruleset/tiktok.mrs'
   netflix:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs'
+    path: './ruleset/netflix.mrs'
   netflix_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs'
+    path: './ruleset/netflix_ip.mrs'
   cloudflare:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.mrs'
+    path: './ruleset/cloudflare.mrs'
   cloudflare_cn:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare@cn.mrs'
+    path: './ruleset/cloudflare@cn.mrs'
   cloudflare_ip:
     <<: *rp_ip
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cloudflare.mrs'
+    path: './ruleset/cloudflare_ip.mrs'
   apple:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.mrs'
+    path: './ruleset/apple.mrs'
   connectivity_check:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/connectivity-check.mrs'
+    path: './ruleset/connectivity-check.mrs'
   category_ntp:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ntp.mrs'
+    path: './ruleset/category-ntp.mrs'
   captcha:
     <<: *rp_domain
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/echs-top/proxy@main/rules/mrs/captcha_domain.mrs'
+    path: './ruleset/captcha_domain.mrs'
 
 # --- 策略组 (Proxy Groups) ---
 
