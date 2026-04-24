@@ -873,7 +873,9 @@ function main(config) {
   config['ntp'] = {
     enable: true,
     'write-to-system': false,
-    server: 'cn.ntp.org.cn',
+    server: 'ntp.aliyun.com',
+    port: 123,
+    interval: 60,
   };
 
   config['tun'] = {
