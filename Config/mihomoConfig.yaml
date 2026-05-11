@@ -107,19 +107,6 @@ hosts:
   '+.mcdn.bilivideo.com': ['0.0.0.0']
   '+.mcdn.bilivideo.cn': ['0.0.0.0']
 
-sniffer:
-  enable: false
-  force-dns-mapping: true
-  parse-pure-ip: true
-  override-destination: false
-  sniff:
-    HTTP: { ports: [80, 8080-8880], override-destination: true }
-    TLS: { ports: [443, 8443] }
-    QUIC: { ports: [443, 8443] }
-  skip-domain:
-    ['Mijia Cloud', '+.oray.com', '+.push.apple.com', 'cloudflare-ech.com']
-  skip-dst-address: ['rule-set:telegram_ip']
-
 ntp:
   enable: true
   write-to-system: false
@@ -267,6 +254,11 @@ rule-providers:
     format: mrs
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-cn.mrs'
     path: './ruleset/geolocation-cn.mrs'
+  cn_additional:
+    <<: *rp_domain
+    format: mrs
+    url: 'https://static-file-global.353355.xyz/rules/cn-additional-list.mrs'
+    path: './ruleset/cn-additional-list.mrs'
   cn:
     <<: *rp_domain
     format: mrs
@@ -443,11 +435,37 @@ proxy-groups:
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/GitHub.png'
 
   - name: 'Microsoft'
-    <<: [*group_common_select, *proxies]
+    <<: *group_common_select
+    proxies:
+      [
+        '默认代理',
+        '直连',
+        '香港',
+        '日本',
+        '美国',
+        '新加坡',
+        '台湾省',
+        '低倍率节点',
+        '高倍率节点',
+        '其他节点',
+      ]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png'
 
   - name: 'Apple'
-    <<: [*group_common_select, *proxies]
+    <<: *group_common_select
+    proxies:
+      [
+        '默认代理',
+        '直连',
+        '香港',
+        '日本',
+        '美国',
+        '新加坡',
+        '台湾省',
+        '低倍率节点',
+        '高倍率节点',
+        '其他节点',
+      ]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png'
 
   - name: 'Telegram'
@@ -643,5 +661,6 @@ rules:
 
   # 兜底规则
   - RULE-SET,gfw,默认代理
+  - RULE-SET,cn_additional,直连
   - RULE-SET,cn_ip,直连
   - MATCH,默认代理
