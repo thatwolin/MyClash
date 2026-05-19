@@ -69,7 +69,6 @@ const rules = [
   'RULE-SET,games_cn,直连',
   'RULE-SET,epicgames,直连',
   'RULE-SET,nvidia_cn,直连',
-  'RULE-SET,microsoft_cn,直连',
   'RULE-SET,cloudflare_cn,直连',
   'RULE-SET,apple_cn,直连',
   'DOMAIN,fsend.cn,直连',
@@ -161,12 +160,6 @@ const baseRuleProviders = {
     ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/nvidia@cn.mrs',
     path: './ruleset/nvidia@cn.mrs',
-  },
-  microsoft_cn: {
-    ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs',
-    path: './ruleset/microsoft@cn.mrs',
   },
   games_cn: {
     ...ruleProviderCommonDomain,

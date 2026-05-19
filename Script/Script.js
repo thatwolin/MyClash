@@ -12,7 +12,6 @@ const rules = [
   'RULE-SET,games_cn,直连',
   'RULE-SET,epicgames,直连',
   'RULE-SET,nvidia_cn,直连',
-  'RULE-SET,microsoft_cn,直连',
   'DOMAIN,fsend.cn,直连',
 
   // 进程规则
@@ -122,24 +121,6 @@ const baseRuleProviders = {
     ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs',
     path: './ruleset/google_ip.mrs',
-  },
-  microsoft: {
-    ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs',
-    path: './ruleset/microsoft.mrs',
-  },
-  microsoft_cn: {
-    ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs',
-    path: './ruleset/microsoft@cn.mrs',
-  },
-  steam: {
-    ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs',
-    path: './ruleset/steam.mrs',
   },
   games_cn: {
     ...ruleProviderCommonDomain,
@@ -251,6 +232,21 @@ const serviceConfigs = [
     },
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/GitHub.png',
     rules: ['RULE-SET,github,GitHub'],
+  },
+  {
+    key: 'microsoft',
+    name: 'Microsoft',
+    proxyMode: 'direct',
+    providers: {
+      microsoft: {
+        ...ruleProviderCommonDomain,
+        ...ruleProviderFormatMrs,
+        url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs',
+        path: './ruleset/microsoft.mrs',
+      },
+    },
+    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png',
+    rules: ['RULE-SET,microsoft,Microsoft'],
   },
   {
     key: 'telegram',
@@ -408,6 +404,7 @@ function main(config) {
   // 定义分流策略组对应的策略组成员
   const proxyModes = {
     default: ['代理', ...groupNamesOfSelect],
+    direct: ['代理', '直连', ...groupNamesOfSelect],
     reject: ['REJECT', 'REJECT-DROP', 'PASS'],
   };
 
@@ -572,7 +569,6 @@ function main(config) {
     'RULE-SET,youtube,代理',
     'RULE-SET,google,代理',
     'RULE-SET,google_ip,代理,no-resolve',
-    'RULE-SET,microsoft,代理',
     'RULE-SET,twitter,代理',
     'RULE-SET,twitter_ip,代理,no-resolve',
 

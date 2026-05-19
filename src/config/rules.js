@@ -11,7 +11,6 @@ const rules = [
   'RULE-SET,games_cn,直连',
   'RULE-SET,epicgames,直连',
   'RULE-SET,nvidia_cn,直连',
-  'RULE-SET,microsoft_cn,直连',
   'RULE-SET,cloudflare_cn,直连',
   'RULE-SET,apple_cn,直连',
   'DOMAIN,fsend.cn,直连',

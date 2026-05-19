@@ -45,12 +45,6 @@ const baseRuleProviders = {
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/nvidia@cn.mrs',
     path: './ruleset/nvidia@cn.mrs',
   },
-  microsoft_cn: {
-    ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs',
-    path: './ruleset/microsoft@cn.mrs',
-  },
   games_cn: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
