@@ -253,6 +253,7 @@ const urlTestBaseOption = {
   ...groupBaseOption,
   type: 'url-test',
   tolerance: 100,
+  'exclude-type': 'DIRECT',
   icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png',
   hidden: true,
 };
@@ -262,6 +263,7 @@ const loadBalanceBaseOption = {
   ...groupBaseOption,
   type: 'load-balance',
   strategy: 'sticky-sessions',
+  'exclude-type': 'DIRECT',
   icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Round_Robin.png',
   hidden: true,
 };
@@ -745,13 +747,11 @@ function main(config) {
       ...urlTestBaseOption,
       name: '自动选择',
       'include-all': true,
-      'exclude-type': 'DIRECT',
     },
     {
       ...loadBalanceBaseOption,
       name: '负载均衡',
       'include-all': true,
-      'exclude-type': 'DIRECT',
     },
   );
 
@@ -845,6 +845,21 @@ function main(config) {
     'direct-nameserver': ['system', '223.5.5.5', '119.29.29.29'],
   };
 
+  // hosts 配置
+  config['hosts'] = {
+    'dns.alidns.com': ['223.5.5.5', '223.6.6.6'],
+    'doh.pub': ['1.12.12.12', '120.53.53.53'],
+    'dns.cloudflare.com': ['1.1.1.1', '1.0.0.1'],
+    'dns.google': ['8.8.8.8', '8.8.4.4'],
+
+    // 解决谷歌商店无法下载的问题
+    'services.googleapis.cn': ['services.googleapis.com'],
+
+    // 屏蔽哔哩哔哩PCDN，解决访问视频卡顿问题
+    '+.mcdn.bilivideo.com': ['0.0.0.0'],
+    '+.mcdn.bilivideo.cn': ['0.0.0.0'],
+  };
+
   // --- 覆盖基础配置 ---
 
   // 添加直连节点
@@ -889,20 +904,6 @@ function main(config) {
   config['profile'] = {
     'store-selected': true,
     'store-fake-ip': true,
-  };
-
-  config['hosts'] = {
-    'dns.alidns.com': ['223.5.5.5', '223.6.6.6'],
-    'doh.pub': ['1.12.12.12', '120.53.53.53'],
-    'dns.cloudflare.com': ['1.1.1.1', '1.0.0.1'],
-    'dns.google': ['8.8.8.8', '8.8.4.4'],
-
-    // 解决谷歌商店无法下载的问题
-    'services.googleapis.cn': ['services.googleapis.com'],
-
-    // 屏蔽哔哩哔哩PCDN，解决访问视频卡顿问题
-    '+.mcdn.bilivideo.com': ['0.0.0.0'],
-    '+.mcdn.bilivideo.cn': ['0.0.0.0'],
   };
 
   config['ntp'] = {
