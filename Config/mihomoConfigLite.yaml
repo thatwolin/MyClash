@@ -48,6 +48,7 @@ proxy-providers:
 
 allow-lan: true
 ipv6: true
+log-level: info
 bind-address: '*'
 unified-delay: true
 tcp-concurrent: true

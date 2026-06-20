@@ -853,6 +853,7 @@ function main(config) {
 
   newConfig['allow-lan'] = true;
   newConfig['ipv6'] = true;
+  newConfig['log-level'] = 'info';
   newConfig['bind-address'] = '*';
   newConfig['unified-delay'] = true;
   newConfig['tcp-concurrent'] = true;
