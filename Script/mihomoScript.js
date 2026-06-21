@@ -180,12 +180,12 @@ const baseRuleProviders = {
     path: './ruleset/private_ip.mrs',
     'path-in-bundle': 'geo/geoip/private.mrs',
   },
-  'geolocation-!cn': {
+  gfw: {
     ...ruleProviderCommonDomain,
     ...ruleProviderFormatMrs,
-    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs',
-    path: './ruleset/geolocation-!cn.mrs',
-    'path-in-bundle': 'geo/geosite/geolocation-!cn.mrs',
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs',
+    path: './ruleset/gfw.mrs',
+    'path-in-bundle': 'geo/geosite/gfw.mrs',
   },
   cn_additional: {
     ...ruleProviderCommonDomain,
@@ -930,7 +930,7 @@ function main(config) {
     ...finalRules,
 
     // 兜底规则
-    'RULE-SET,geolocation-!cn,默认代理',
+    'RULE-SET,gfw,默认代理',
     'RULE-SET,cn_additional,直连',
     'RULE-SET,cn_ip,直连',
     'MATCH,漏网之鱼',
