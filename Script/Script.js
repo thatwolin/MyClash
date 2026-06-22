@@ -533,8 +533,8 @@ function main(config) {
   };
 
   // 添加节点
-  newConfig.proxies = [...config.proxies];
-  newConfig.proxies.push(
+  newConfig['proxies'] = [
+    ...config.proxies,
     {
       name: '🇨🇳 直连 | IPv4优先',
       type: 'direct',
@@ -549,7 +549,7 @@ function main(config) {
       name: '🇨🇳 直连 | 双栈',
       type: 'direct',
     },
-  );
+  ];
 
   newConfig['proxy-groups'] = [
     globalGroup,
