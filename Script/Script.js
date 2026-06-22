@@ -68,15 +68,15 @@ const regionDefinitions = [
 ];
 
 // Rule Providers 通用配置
-const ruleProviderFormatMrs = { format: 'mrs' };
-
 const ruleProviderCommonDomain = {
   type: 'http',
+  format: 'mrs',
   interval: 86400,
   behavior: 'domain',
 };
 const ruleProviderCommonIpcidr = {
   type: 'http',
+  format: 'mrs',
   interval: 86400,
   behavior: 'ipcidr',
 };
@@ -85,84 +85,72 @@ const ruleProviderCommonIpcidr = {
 const baseRuleProviders = {
   private: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs',
     path: './ruleset/private.mrs',
     'path-in-bundle': 'geo/geosite/private.mrs',
   },
   private_ip: {
     ...ruleProviderCommonIpcidr,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs',
     path: './ruleset/private_ip.mrs',
     'path-in-bundle': 'geo/geoip/private.mrs',
   },
   fakeip_filter: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/wwqgtxx/clash-rules@release/fakeip-filter.mrs',
     path: './ruleset/fakeip-filter.mrs',
     'path-in-bundle': 'geo/geosite/fakeip-filter.mrs',
   },
   epicgames: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/epicgames.mrs',
     path: './ruleset/epicgames.mrs',
     'path-in-bundle': 'geo/geosite/epicgames.mrs',
   },
   games_cn: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-games@cn.mrs',
     path: './ruleset/category-games@cn.mrs',
     'path-in-bundle': 'geo/geosite/category-games@cn.mrs',
   },
   apple_cn: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple@cn.mrs',
     path: './ruleset/apple@cn.mrs',
     'path-in-bundle': 'geo/geosite/apple@cn.mrs',
   },
   microsoft_cn: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs',
     path: './ruleset/microsoft@cn.mrs',
     'path-in-bundle': 'geo/geosite/microsoft@cn.mrs',
   },
   google: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs',
     path: './ruleset/google.mrs',
     'path-in-bundle': 'geo/geosite/google.mrs',
   },
   gfw: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs',
     path: './ruleset/gfw.mrs',
     'path-in-bundle': 'geo/geosite/gfw.mrs',
   },
   cn_additional: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://static-file-global.353355.xyz/rules/cn-additional-list.mrs',
     path: './ruleset/cn-additional-list.mrs',
     'path-in-bundle': 'geo/geosite/cn.mrs',
   },
   cn: {
     ...ruleProviderCommonDomain,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/wwqgtxx/clash-rules@release/direct.mrs',
     path: './ruleset/cn.mrs',
     'path-in-bundle': 'geo/geosite/cn.mrs',
   },
   cn_ip: {
     ...ruleProviderCommonIpcidr,
-    ...ruleProviderFormatMrs,
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs',
     path: './ruleset/cn_ip.mrs',
     'path-in-bundle': 'geo/geoip/cn.mrs',
@@ -204,7 +192,6 @@ const serviceConfigs = [
     providers: {
       ai: {
         ...ruleProviderCommonDomain,
-        ...ruleProviderFormatMrs,
         url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.mrs',
         path: './ruleset/ai.mrs',
         'path-in-bundle': 'geo/geosite/category-ai-!cn.mrs',
@@ -219,14 +206,12 @@ const serviceConfigs = [
     providers: {
       telegram: {
         ...ruleProviderCommonDomain,
-        ...ruleProviderFormatMrs,
         url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs',
         path: './ruleset/telegram.mrs',
         'path-in-bundle': 'geo/geosite/telegram.mrs',
       },
       telegram_ip: {
         ...ruleProviderCommonIpcidr,
-        ...ruleProviderFormatMrs,
         url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs',
         path: './ruleset/telegram_ip.mrs',
         'path-in-bundle': 'geo/geoip/telegram.mrs',
@@ -244,7 +229,6 @@ const serviceConfigs = [
     providers: {
       steam: {
         ...ruleProviderCommonDomain,
-        ...ruleProviderFormatMrs,
         url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs',
         path: './ruleset/steam.mrs',
         'path-in-bundle': 'geo/geosite/steam.mrs',
@@ -260,7 +244,6 @@ const serviceConfigs = [
     providers: {
       adblockmihomolite: {
         ...ruleProviderCommonDomain,
-        ...ruleProviderFormatMrs,
         url: 'https://fastly.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomolite.mrs',
         path: './ruleset/adblockmihomolite.mrs',
         'path-in-bundle': 'geo/geosite/category-ads-all.mrs',
