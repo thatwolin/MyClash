@@ -20,7 +20,7 @@ const rules = [
   'RULE-SET,private_ip,直连,no-resolve',
 
   // 国内直连
-  'RULE-SET,games_cn,直连',
+  'RULE-SET,games_cn,直连', // 已包含 steam 下载域名
   'RULE-SET,epicgames,直连',
   'RULE-SET,apple_cn,直连',
   'RULE-SET,microsoft_cn,直连',
@@ -223,6 +223,7 @@ const serviceConfigs = [
   {
     key: 'steam',
     name: 'Steam',
+    direct: true,
     providers: {
       steam: {
         ...ruleProviderCommonDomain,
@@ -342,13 +343,20 @@ function main(config) {
   // 筛选类型为 select 的地区策略组
   const groupNamesOfSelect = generatedRegionGroups.filter((g) => g.type === 'select').map((g) => g.name);
 
-  // 生成代理策略组
-  functionalGroups.push({
-    ...selectBaseOption,
-    name: '默认代理',
-    proxies: [...groupNamesOfSelect],
-    icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png',
-  });
+  // 生成基础策略组
+  functionalGroups.push(
+    {
+      ...selectBaseOption,
+      name: '默认代理',
+      proxies: [...groupNamesOfSelect, '自动选择'],
+      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png',
+    },
+    {
+      ...urlTestBaseOption,
+      name: '自动选择',
+      'include-all': true,
+    },
+  );
 
   // 构建分流策略组
   for (const svc of serviceConfigs) {

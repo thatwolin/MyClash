@@ -64,7 +64,7 @@ const rules = [
   'RULE-SET,private_ip,直连,no-resolve',
 
   // 国内直连
-  'RULE-SET,games_cn,直连',
+  'RULE-SET,games_cn,直连', // 已包含 steam 下载域名
   'RULE-SET,epicgames,直连',
   'RULE-SET,nvidia_cn,直连',
   'RULE-SET,cloudflare_cn,直连',
@@ -418,6 +418,7 @@ const serviceConfigs = [
   {
     key: 'steam',
     name: 'Steam',
+    direct: true,
     providers: {
       steam: {
         ...ruleProviderCommonDomain,
@@ -476,7 +477,7 @@ const serviceConfigs = [
       },
     },
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Emby.png',
-    rules: ['RULE-SET,emby,Emby', 'DOMAIN-KEYWORD,emby,Emby'],
+    rules: ['RULE-SET,emby,Emby', 'DOMAIN-SUFFIX,mb3admin.com,Emby', 'DOMAIN-KEYWORD,emby,Emby'],
   },
   {
     key: 'spotify',

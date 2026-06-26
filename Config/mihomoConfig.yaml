@@ -418,25 +418,6 @@ proxies_common:
         ],
     }
 
-  proxies_direct_first:
-    &proxies_direct_first {
-      proxies:
-        [
-          '直连',
-          '默认代理',
-          '香港',
-          '日本',
-          '美国',
-          '新加坡',
-          '台湾省',
-          '低倍率节点',
-          '高倍率节点',
-          '自动选择',
-          '负载均衡',
-          '其他节点',
-        ],
-    }
-
   proxies_reject: &proxies_reject { proxies: ['REJECT', 'REJECT-DROP', 'PASS'] }
 
 # 地区过滤器正则表达式定义
@@ -495,7 +476,8 @@ proxy-groups:
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png'
 
   - name: 'FCM'
-    <<: [*group_common_select, *proxies_direct_first]
+    <<: [*group_common_select, *proxies_direct]
+    default-selected: '直连'
     icon: 'https://fastly.jsdelivr.net/gh/MiToverG422/Qure@master/IconSet/Color/fcm.png'
 
   - name: 'Google'
@@ -527,7 +509,7 @@ proxy-groups:
     icon: 'https://play-lh.googleusercontent.com/Ls9opXo6-wfEWmbBU8heJaFS8HwWydssWE1J3vexIGvkF-UJDqcW7ZMD8w6dQABfygONd4z3Yt4TfRDZAPYq=w480-h960-rw'
 
   - name: 'Steam'
-    <<: [*group_common_select, *proxies_default]
+    <<: [*group_common_select, *proxies_direct]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Steam.png'
 
   - name: 'Twitter'
@@ -651,6 +633,7 @@ proxy-groups:
     <<: [*group_common_load, *exclude_filter]
 
 # --- 路由规则 (Rules) ---
+
 rules:
   # 禁用国外 QUIC 流量
   - AND,((NETWORK,UDP),(DST-PORT,443),(NOT,((OR,((RULE-SET,cn_additional),(RULE-SET,cn_ip,no-resolve)))))),REJECT
@@ -660,7 +643,7 @@ rules:
   - RULE-SET,private_ip,直连,no-resolve
 
   # 国内直连
-  - RULE-SET,games_cn,直连
+  - RULE-SET,games_cn,直连 # 已包含 steam 下载域名
   - RULE-SET,epicgames,直连
   - RULE-SET,nvidia_cn,直连
   - RULE-SET,cloudflare_cn,直连
@@ -691,6 +674,7 @@ rules:
   - RULE-SET,twitter,Twitter
   - RULE-SET,instagram,Instagram
   - RULE-SET,emby,Emby
+  - DOMAIN-SUFFIX,mb3admin.com,Emby
   - DOMAIN-KEYWORD,emby,Emby
   - RULE-SET,spotify,Spotify
   - RULE-SET,tiktok,TikTok
