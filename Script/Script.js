@@ -454,7 +454,6 @@ function main(config) {
     'use-system-hosts': true,
     'enhanced-mode': 'fake-ip',
     'fake-ip-range': '198.18.0.1/16',
-    'fake-ip-range6': 'fc00::/18',
     'fake-ip-filter': ['rule-set:private', 'rule-set:fakeip_filter'],
     'proxy-server-nameserver': [
       ...(originalProxyServerNameserver.length > 0 ? originalProxyServerNameserver : chinaDNS),
