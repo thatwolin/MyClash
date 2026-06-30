@@ -480,7 +480,7 @@ function main(config) {
     // 屏蔽哔哩哔哩PCDN，解决访问视频卡顿问题
     '+.mcdn.bilivideo.com': ['0.0.0.0'],
     '+.mcdn.bilivideo.cn': ['0.0.0.0'],
-    '+.edge.mountaintoys.cn': ['0.0.0.0']
+    '+.edge.mountaintoys.cn': ['0.0.0.0'],
   };
 
   newConfig['allow-lan'] = true;
