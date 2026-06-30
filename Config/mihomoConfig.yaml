@@ -554,7 +554,7 @@ proxy-groups:
     <<: [*group_common_select, *proxies_direct]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png'
 
-  - name: '广告拦截'
+  - name: 'AdBlock'
     <<: [*group_common_select, *proxies_reject]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png'
 
@@ -675,7 +675,7 @@ rules:
   - PROCESS-NAME,com.perol.play.pixez,Pixiv
 
   # 广告拦截
-  - RULE-SET,adblockmihomolite,广告拦截
+  - RULE-SET,adblockmihomolite,AdBlock
 
   # 代理规则（域名）
   - RULE-SET,ai,AI
@@ -709,7 +709,7 @@ rules:
   - RULE-SET,telegram_ip,Telegram,no-resolve
   - RULE-SET,twitter_ip,Twitter,no-resolve
   - RULE-SET,cloudflare_ip,Cloudflare,no-resolve
-  - RULE-SET,netflix_ip,Netflix,no-resolve
+  - RULE-SET,netflix_ip,Media,no-resolve
 
   # 兜底规则
   - RULE-SET,gfw,默认代理

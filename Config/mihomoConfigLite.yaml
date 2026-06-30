@@ -357,7 +357,7 @@ proxy-groups:
     <<: [*group_common_select, *proxies_direct]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Steam.png'
 
-  - name: '广告拦截'
+  - name: 'AdBlock'
     <<: [*group_common_select, *proxies_reject]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png'
 
@@ -456,7 +456,7 @@ rules:
   - DOMAIN,international-gfe.download.nvidia.com,直连
 
   # 广告拦截
-  - RULE-SET,adblockmihomolite,广告拦截
+  - RULE-SET,adblockmihomolite,AdBlock
 
   # 代理规则
   - RULE-SET,ai,AI
