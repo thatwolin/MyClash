@@ -40,7 +40,7 @@ const excludeHighRateProxiesEnable = false;
 
 // 定义全局排除节点的正则表达式，用于排除非地区的信息节点
 const excludeFilter =
-  /群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|禁止|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|⚠️|@|Expire|http|com/u;
+  /群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|禁止|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|⚠️|@|Expire|http|com/u;
 
 // 预定义 rules
 const rules = [
@@ -525,7 +525,6 @@ const serviceConfigs = [
 // 定义创建地区策略组的函数
 function createRegionGroup(name, icon, proxies) {
   const urlTestName = `${name}-自动选择`;
-  const loadBalanceName = `${name}-负载均衡`;
   return [
     {
       ...urlTestBaseOption,
@@ -533,15 +532,10 @@ function createRegionGroup(name, icon, proxies) {
       proxies,
     },
     {
-      ...loadBalanceBaseOption,
-      name: loadBalanceName,
-      proxies,
-    },
-    {
       ...selectBaseOption,
       name,
       icon,
-      proxies: [urlTestName, loadBalanceName, ...proxies],
+      proxies: [urlTestName, ...proxies],
     },
   ];
 }
@@ -630,8 +624,15 @@ function main(config) {
     {
       ...selectBaseOption,
       name: '默认代理',
-      proxies: [...groupNamesOfSelect, '自动选择', '负载均衡'],
+      proxies: [...groupNamesOfSelect, '手动选择', '自动选择', '负载均衡'],
       icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png',
+    },
+    {
+      ...selectBaseOption,
+      name: '手动选择',
+      'include-all': true,
+      'exclude-type': 'DIRECT',
+      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Rocket.png',
     },
     {
       ...urlTestBaseOption,
@@ -660,7 +661,7 @@ function main(config) {
     // 添加分流策略组对应的节点列表
     const groupProxies = svc.reject
       ? ['REJECT', 'REJECT-DROP', 'PASS']
-      : ['默认代理', '自动选择', '负载均衡', ...groupNamesOfSelect, ...(svc.direct ? ['直连'] : [])];
+      : ['默认代理', '自动选择', '负载均衡', '手动选择', ...groupNamesOfSelect, ...(svc.direct ? ['直连'] : [])];
 
     functionalGroups.push({
       ...selectBaseOption,
