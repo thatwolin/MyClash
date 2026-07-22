@@ -519,7 +519,7 @@ const serviceConfigs = [
         'path-in-bundle': 'geo/geosite/ehentai.mrs',
       },
     },
-    icon: 'https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/exhentai.png',
+    icon: 'https://fastly.jsdelivr.net/gh/lige47/QuanX-icon-rule@main/icon/04ProxySoft/exhentai.png',
     rules: ['RULE-SET,ehentai,EHentai'],
   },
   {
