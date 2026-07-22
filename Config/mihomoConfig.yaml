@@ -331,6 +331,11 @@ rule-providers:
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs'
     path: './ruleset/spotify.mrs'
     path-in-bundle: 'geo/geosite/spotify.mrs'
+  ehentai:
+    <<: *rule_providers_domain
+    url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/ehentai.mrs'
+    path: './ruleset/ehentai.mrs'
+    path-in-bundle: 'geo/geosite/ehentai.mrs'
   gfw:
     <<: *rule_providers_domain
     url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs'
@@ -554,6 +559,11 @@ proxy-groups:
     <<: [*group_common_select, *proxies_direct]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png'
 
+  - name: 'EHentai'
+    default-selected: '美国'
+    <<: [*group_common_select, *proxies_default]
+    icon: 'https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/exhentai.png'
+
   - name: 'AdBlock'
     <<: [*group_common_select, *proxies_reject]
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png'
@@ -681,6 +691,7 @@ rules:
   - DOMAIN-KEYWORD,emby,Emby
   - RULE-SET,pikpak,PikPak
   - RULE-SET,spotify,Spotify
+  - RULE-SET,ehentai,EHentai
 
   # 代理规则（IP）
   - RULE-SET,google_ip,Google,no-resolve

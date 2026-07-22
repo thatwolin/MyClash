@@ -27,6 +27,7 @@ const ruleOptionsEnable = {
   Emby: true, // Emby媒体服务
   PikPak: true, // PikPak网盘服务
   Spotify: true, // Spotify音乐服务
+  EHentai: true, // E-Hentai网站
   AdBlock: true, // 广告拦截
 };
 
@@ -506,6 +507,20 @@ const serviceConfigs = [
     },
     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png',
     rules: ['RULE-SET,spotify,Spotify'],
+  },
+  {
+    name: 'EHentai',
+    defaultSelected: '美国',
+    providers: {
+      ehentai: {
+        ...ruleProviderCommonDomain,
+        url: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/ehentai.mrs',
+        path: './ruleset/ehentai.mrs',
+        'path-in-bundle': 'geo/geosite/ehentai.mrs',
+      },
+    },
+    icon: 'https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/exhentai.png',
+    rules: ['RULE-SET,ehentai,EHentai'],
   },
   {
     name: 'AdBlock',
