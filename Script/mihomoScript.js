@@ -771,7 +771,8 @@ function main(config) {
   const commonDnsRegex =
     /(223\.5\.5\.5|223\.6\.6\.6|119\.29\.29\.29|1\.12\.12\.12|120\.53\.53\.53|114\.114\.114\.114|180\.76\.76\.76|1\.1\.1\.1|1\.0\.0\.1|8\.8\.8\.8|8\.8\.4\.4|94\.140\.14\.14|94\.140\.15\.15|127\.0\.0\.1|alidns|doh\.pub|dot\.pub|dnspod|dns\.baidu|dns\.google|cloudflare|adguard|system)/i;
 
-  const originalProxyServerNameserver = [
+  // 提取私有 DNS
+  const privateDNS = [
     ...new Set([...(originalDnsConfig['nameserver'] || []), ...(originalDnsConfig['proxy-server-nameserver'] || [])]),
   ].filter((dns) => !commonDnsRegex.test(String(dns)));
 
@@ -781,14 +782,14 @@ function main(config) {
   );
 
   // 提取节点域名对应的 DNS 配置
-  const originalPolicyNameserver = {};
+  const proxyServerPolicy = {};
   for (const policy of [
     originalDnsConfig['nameserver-policy'] || {},
     originalDnsConfig['proxy-server-nameserver-policy'] || {},
   ]) {
     for (const [domain, dns] of Object.entries(policy)) {
       if (matchDomainPattern(domain, proxyDomains)) {
-        originalPolicyNameserver[domain] = dns;
+        proxyServerPolicy[domain] = dns;
       }
     }
   }
@@ -806,9 +807,9 @@ function main(config) {
     'enhanced-mode': 'fake-ip',
     'fake-ip-range': '198.18.0.1/16',
     'fake-ip-filter': ['rule-set:private', 'rule-set:fakeip_filter'],
-    'proxy-server-nameserver': [...chinaDNS, ...originalProxyServerNameserver],
-    ...(Object.keys(originalPolicyNameserver).length > 0 && {
-      'proxy-server-nameserver-policy': originalPolicyNameserver,
+    'proxy-server-nameserver': [...chinaDNS, ...privateDNS],
+    ...(Object.keys(proxyServerPolicy).length > 0 && {
+      'proxy-server-nameserver-policy': proxyServerPolicy,
     }),
     'default-nameserver': ['223.5.5.5', '119.29.29.29'],
     nameserver: [...foreignDNS],
@@ -822,10 +823,10 @@ function main(config) {
 
   // 提取订阅 hosts 中与节点域名对应的记录
   const originalHosts = config.hosts || {};
-  const proxyHosts = {};
+  const proxyServerHosts = {};
   for (const [domain, value] of Object.entries(originalHosts)) {
     if (matchDomainPattern(domain, proxyDomains)) {
-      proxyHosts[domain] = value;
+      proxyServerHosts[domain] = value;
     }
   }
 
@@ -844,7 +845,7 @@ function main(config) {
     '+.edge.mountaintoys.cn': ['0.0.0.0'],
 
     // 保留机场用于节点解析的 hosts
-    ...proxyHosts,
+    ...proxyServerHosts,
   };
 
   newConfig['allow-lan'] = true;
